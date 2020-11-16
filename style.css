@@ -28,8 +28,7 @@
 }
 .wrapper .dev_by {
   font-size: 10px;
-  position: absolute;
-  bottom: 100px;
+  margin-top: var(--size);
 }
 .wrapper .dev_by a {
   font-weight: bold;

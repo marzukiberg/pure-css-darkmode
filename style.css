@@ -1,0 +1,91 @@
+:root {
+  --size: 30px;
+  --white: #ecf0f1;
+  --black: #34495e;
+  --blue: #3498db;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: .5s;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.wrapper>span {
+  margin-bottom: 10px;
+}
+.wrapper .night {
+  display: none;
+  color: var(--white);
+}
+.wrapper .dev_by {
+  font-size: 10px;
+  position: absolute;
+  bottom: 100px;
+}
+.wrapper .dev_by a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.switcher {
+  width: calc(var(--size)*2);
+  height: var(--size);
+  border-radius: calc(var(--size)/2);
+  background-color: var(--white);
+  border: none;
+  position: relative;
+  outline: none;
+  box-shadow: 0px 0px 1px var(--black);
+}
+
+.switcher_circle {
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--blue);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+}
+
+.switcher_checkbox {
+  display: none;
+}
+
+.switcher_checkbox:checked~.wrapper .switcher .switcher_circle {
+  left: var(--size);
+}
+
+.switcher_checkbox:checked~.wrapper {
+  background-color: var(--black);
+}
+.switcher_checkbox:checked~.wrapper .dev_by, .switcher_checkbox:checked~.wrapper .dev_by a {
+  color: white;
+}
+.switcher_checkbox:checked~.wrapper .night {
+  display: block;
+}
+
+.switcher_checkbox:checked~.wrapper .light {
+  display: none;
+}
+
+.switcher_checkbox_label {
+  width: calc(var(--size)*2);
+  height: var(--size);
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+}
